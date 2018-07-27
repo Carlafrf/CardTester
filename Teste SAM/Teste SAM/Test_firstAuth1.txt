@@ -1,0 +1,9 @@
+
+ 	  Teste de Autenticação compatibilidade MIFARE classic 
+
+  <-- FE 26 FE FE
+  --> 00
+  <-- FE 41 FE FE 02 40 50
+  --> 02
+  <-- FE 47 FE FE 02 43 50
+  --> 02

@@ -1,0 +1,13 @@
+﻿  des.cpp
+  binAPDU.cpp
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(199): warning C4267: 'argumento': conversão de 'size_t' para 'uint16_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(372): warning C4244: 'argumento': conversão de 'uint16_t' para 'const uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(379): warning C4244: '=': conversão de 'uint16_t' para 'uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(380): warning C4244: '=': conversão de 'uint16_t' para 'uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(387): warning C4244: '=': conversão de 'uint16_t' para 'uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(388): warning C4244: '=': conversão de 'uint16_t' para 'uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(510): warning C4244: '=': conversão de 'uint16_t' para 'uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(555): warning C4244: '=': conversão de 'uint16_t' para 'uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\binarydata\binapdu.cpp(558): warning C4244: 'argumento': conversão de 'uint16_t' para 'const uint8_t', possível perda de dados
+  Gerando Código...
+  BinaryData.vcxproj -> C:\Users\carla.ferreira\Documents\Projetos\18.07.02 - Teste Autenticação SAM\Programa\Teste SAM\Debug\BinaryData.lib

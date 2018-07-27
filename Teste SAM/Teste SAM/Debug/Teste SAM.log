@@ -1,0 +1,10 @@
+﻿  TesteSAMDebitoMifareP.cpp
+  Teste SAM.cpp
+  Cipurse.cpp
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\teste sam\cipurse.cpp(194): warning C4244: 'argumento': conversão de 'uint16_t' para 'const uint8_t', possível perda de dados
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\teste sam\cipurse.cpp(244): warning C4244: 'argumento': conversão de 'uint16_t' para 'const uint8_t', possível perda de dados
+  Gerando Código...
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\teste sam\cipurse.cpp(159): warning C4715: 'Auth_CipurseADF': nem todos os caminhos de controle retornam um valor
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\teste sam\testesamdebitomifarep.cpp(248): warning C4715: 'Try_AuthSL3': nem todos os caminhos de controle retornam um valor
+c:\users\carla.ferreira\documents\projetos\18.07.02 - teste autenticação sam\programa\teste sam\teste sam\testesamdebitomifarep.cpp(395): warning C4715: 'CsetUID': nem todos os caminhos de controle retornam um valor
+  Teste SAM.vcxproj -> C:\Users\carla.ferreira\Documents\Projetos\18.07.02 - Teste Autenticação SAM\Programa\Teste SAM\Debug\Teste SAM.exe
