@@ -89,13 +89,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\carla.ferreira\Documents\Projetos\18.07.02 - Teste Autenticação SAM\Programa\Teste SAM\ReadersLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\carla.ferreira\Documents\CardTester\ReadersLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>winscard.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\carla.ferreira\Documents\Projetos\18.07.02 - Teste Autenticação SAM\Programa\Teste SAM\BinaryData;C:\Users\carla.ferreira\Documents\Projetos\18.07.02 - Teste Autenticação SAM\Programa\Teste SAM\ReadersLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,6 +120,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\carla.ferreira\Documents\CardTester\ReadersLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,13 +153,13 @@
     <ClCompile Include="TesteSAMDebitoMifareP.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ReadersLib\ReadersLib.vcxproj">
-      <Project>{3c830bba-685d-494f-964a-f1df61cf1ae9}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Cipurse.h" />
     <ClInclude Include="TesteSAMDebitoMifareP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ReadersLib\ReadersLib.vcxproj">
+      <Project>{3c830bba-685d-494f-964a-f1df61cf1ae9}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
