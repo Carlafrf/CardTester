@@ -68,9 +68,9 @@ static bool ListReaders() {
 	if (rt != SCARD_S_SUCCESS) {
 
 		//std::cout << ">> ReaderImp::ListReaders():" << std::endl;
-		std::cout << "\n \t    ERROR: Cannot list the readers." << std::endl;
-		std::cout << "\t Possibly, there are not readers connected" << std::endl;
-		std::cout << "\t         press enter to finish..." << std::endl;
+		std::cout << "\n \tERROR: Cannot list the readers." << std::endl;
+		std::cout << "\t Check if the readers are connected" << std::endl;
+		std::cout << "\t     press enter to finish..." << std::endl;
 
 		*globalCtx_ = con;
 
@@ -79,7 +79,6 @@ static bool ListReaders() {
 	}
 	else {
 		if (con.mszReaders_g > 0) {
-			//std::cout << ">>mszReaders_g:" << con.mszReaders_g << std::endl;
 			*globalCtx_ = con;
 			return true;
 		}
@@ -116,7 +115,7 @@ static bool initReaders() {
 		//Detaching the names
 		readerName.assign((const char *)pReader);
 		std::cout << "Reader:" << readerName << std::endl;
-		reader = ReaderTypeByName2(readerName); //Here it instantiate an object acording to the reader type (MCR, Duali, PCSCgen...)
+		reader = ReaderTypeByName2(readerName); //Here it instantiates an object acording to the reader type (MCR, Duali, PCSCgen...)
 		readersList.push_back(reader);
 		// Advance to the next value.
 		pReader = pReader + strlen((const char*)pReader) + 1;
@@ -180,15 +179,6 @@ void ReaderImp::printApdu(const ApduMsg apdu) {
 }
 
 
-
-
-
-
-
-
-
-
-
 //ReaderImp* ReaderImp::ReaderTypeByName(const std::string & ReaderName) {
 //
 //	ReaderImp* newReader;
@@ -205,5 +195,12 @@ void ReaderImp::printApdu(const ApduMsg apdu) {
 //}//ReaderTypeByName(std::string ReaderName)
 
 ReaderImp::~ReaderImp() {
+	return;
+}
 
+void ReaderImp::endSection() {
+	for (int i = 0; i < ReaderImp::getNumberOfReaders(); i++) {
+		std::cout << "\n Deleting:" << getReaderList()[i]->name();
+		delete(ReaderImp::getReaderList()[i]);
+	}
 }

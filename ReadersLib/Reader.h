@@ -17,15 +17,16 @@
 class Reader {
 public:
 
-	virtual ~Reader() { return; };
+	virtual ~Reader(){ return; };
 
 	static Reader * getReader(unsigned id);
 	static unsigned getNumberOfReaders();
 	static void initSectionReaders();
 	static std::vector<Reader*> getReaderList();
 	static void printApdu(ApduMsg apdu);
+	static void endSection();
 	//static int printAndCheck(ApduResp ret, int card, uint8_t reference = NULL);
-//	
+	
 	virtual bool mode14443_4() = 0; //forceMode14443_4
 	virtual bool modeCompatibility() = 0;
 	virtual bool getATR() = 0;
@@ -47,8 +48,7 @@ public:
 	enum mode { DEFAULT_MODE, MODE_COMPATIBILITY, MODE_144434 };
 	enum cardType { DEFAULT_CARD = 0, MIFARE_CLASSIC, MIFARE_PLUSX_SL0, MIFARE_PLUSX_SL1, MIFARE_PLUSX_SL2, MIFARE_PLUSX_SL3, MIFARE_PLUSS_SL0, MIFARE_PLUSS_SL1, MIFARE_PLUSS_SL3, MIFARE_PLUSSE_SL0, MIFARE_PLUSSE_SL1, MIFARE_PLUSSE_SL3, MIFARE_PLUS_EV1, MIFARE_DESFIRE, MIFARE_DESFIRE_EV1, MIFARE_DESFIRE_EV2, CIPURSE_4MOVE_4K, CIPURSE_4MOVE_2K, DEFAULT_ISO144434, CARD_FINAL };
 	const char * sCardType[CARD_FINAL] = { "DEFAULT_CARD", "MIFARE_CLASSIC", "MIFARE_PLUSX_SL0", "MIFARE_PLUSX_SL1", "MIFARE_PLUSX_SL2", "MIFARE_PLUSX_SL3", "MIFARE_PLUSS_SL0", "MIFARE_PLUSS_SL1", "MIFARE_PLUSS_SL3", "MIFARE_PLUSSE_SL0", "MIFARE_PLUSSE_SL1", "MIFARE_PLUSSE_SL3", "MIFARE_PLUS_EV1", "MIFARE_DESFIRE", "MIFARE_DESFIRE_EV1", "MIFARE_DESFIRE_EV2", "CIPURSE_4MOVE_4K", "CIPURSE_4MOVE_2K", "DEFAULT_ISO144434" };
-                                 	   //{ "DEFAULT_CARD", "MIFARE_CLASSIC", "MIFARE_PLUSX_SL0", "MIFARE_PLUSX_SL1", "MIFARE_PLUSX_SL2", "MIFARE_PLUSX_SL3", "MIFARE_PLUSS_SL0", "MIFARE_PLUSS_SL1", "MIFARE_PLUSS_SL3", "MIFARE_PLUSSE_SL0", "MIFARE_PLUSSE_SL1", "MIFARE_PLUSSE_SL3",  "MIFARE_PLUS_EV1", "MIFARE_DESFIRE", "MIFARE_DESFIRE_EV1", "MIFARE_DESFIRE_EV2", "CIPURSE_4MOVE_4K", "DEFAULT_ISO144434", "CIPURSE_4MOVE_2K" };
-	
+                                 	   
 protected:
 	Reader();	
 };
