@@ -7,9 +7,6 @@
 #include <vector>
 #include <winscard.h>
 
-
-static Reader * getReader(unsigned id);
-
 unsigned Reader::getNumberOfReaders() {
 	return ReaderImp::getNumberOfReaders();
 }//getNumberOfReaders()
@@ -23,16 +20,29 @@ std::vector<Reader*> Reader::getReaderList() {
 	return ReaderImp::getReaderList();
 }//getReaderList()
 
+
+Reader * Reader::getReader(unsigned id)
+{
+	Reader * reader = ReaderImp::getReaderList()[id];
+	return reader;
+}//getReader()
+
+
 void Reader::printApdu(ApduMsg apdu) {
 	ReaderImp::printApdu(apdu);
-}
+}//printApdu()
 
 //void Reader::printAndCheck(ApduResp ret, midiaType card, uint8_t reference) {
 //int Reader::printAndCheck(ApduResp ret, int card, uint8_t reference) {
 //	return ReaderImp::printAndCheck(ret, card, reference);
 //}
 
+void Reader::endSection() {
+	ReaderImp::endSection();
+}
+
 Reader::Reader()
 {
 
 }
+

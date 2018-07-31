@@ -11,6 +11,9 @@ public:
 		sname_ = ReaderName;
 		return;
 };
+	~PCSCreader() {
+		//std::cout << "deleting \n"; //to delete future var
+	}
 
 	static ReaderImp* testAndCreate(const std::string &ReaderName);
 

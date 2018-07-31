@@ -22,17 +22,18 @@ class ReaderImp : public  Reader {
 public:
 	ReaderImp()
 		: card_presence(false), connected(false), cardtype_(DEFAULT_CARD){ return; }
-	~ReaderImp();
+	virtual ~ReaderImp();
 
 	bool cardPresent() { return card_presence; }
 	const std::string & name() { return sname_; } 
 	bool CardTransmit(const  ApduMsg & apdu, ApduResp & ret, int media) = 0;
 	bool getUID(int & uid_sz, uint8_t ** uid_) = 0;
-	
+
 	static void initSectionReaders();
 	static unsigned getNumberOfReaders();
 	static std::vector<Reader*> getReaderList();
 	static void printApdu(ApduMsg apdu);
+	static void endSection();
 	//static int printAndCheck(ApduResp ret, int card, uint8_t reference = NULL);
 
 	static READERS_GROUP_DATA *  ctx_;

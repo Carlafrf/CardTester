@@ -5,15 +5,13 @@
 #include <windows.h>
 #include <winscard.h>
 
-
-
 ReaderImp* PCSCreader::testAndCreate(const std::string &ReaderName) {
-	//Here we can put some test abou some names, like GEMALTO
+	//Here we can put some test about some names, like GEMALTO
 	ReaderImp* newReader;
 	newReader = new PCSCreader(ReaderName);
+	newReader->sname_ = ReaderName;
 	return newReader;
 }
-
 
 /*
 * Wait for card to be inserted, create connection, gets ATR
@@ -119,7 +117,6 @@ bool PCSCreader::ConnectCard(unsigned long timeout) {
 
 }//ConnectCard()
 
-
 bool PCSCreader::CardTransmit(const  ApduMsg & apdu, ApduResp & ret, int media) {
 
 	if (!card_presence) {
@@ -174,7 +171,6 @@ bool PCSCreader::getATR() {
 	}
 	return true;
 }
-
 
 int PCSCreader::printAndCheck(const ApduResp ret, int card, uint8_t reference) {
 	//in the case there is not an .txt to write 

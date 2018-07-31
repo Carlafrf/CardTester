@@ -32,7 +32,8 @@ ReaderImp* Duali::testAndCreate(const std::string &ReaderName) {
 		if ((ReaderName.find("Contactless") != std::string::npos)) {
 			newReader = new Duali(ReaderName); //new Duali(ReaderName);
 		}
-		else { newReader = new PCSCreader(ReaderName); } //"we" can decide about what would be here, but later (for the contact duali)
+		else { newReader = new PCSCreader(ReaderName); } //we can decide about what would be here (for the contact duali), but later 
+		newReader->sname_ = ReaderName;
 		return newReader;
 	}
 	else {
